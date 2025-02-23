@@ -1,0 +1,22 @@
+# This file contains the database configuration for the Ragdoll gem, using environment variables.
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: <%= ENV.fetch("RAGDOLL_USER", "user") %>
+  password: <%= ENV.fetch("RAGDOLL_PASSWORD", "password") %>
+
+development:
+  <<: *default
+  database: ragdoll_development
+
+test:
+  <<: *default
+  database: ragdoll_test
+
+production:
+  <<: *default
+  database: ragdoll_production
+  username: <%= ENV["RAGDOLL_PRODUCTION_USER"] %>
+  password: <%= ENV["RAGDOLL_PRODUCTION_PASSWORD"] %>
