@@ -1,65 +1,39 @@
+# ragdoll_test_app/Gemfile
+
 source "https://rubygems.org"
 
-# Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem "rails", "~> 8.0.1"
-# The modern asset pipeline for Rails [https://github.com/rails/propshaft]
-gem "propshaft"
-# Use sqlite3 as the database for Active Record
-gem "sqlite3", ">= 2.1"
-# Use the Puma web server [https://github.com/puma/puma]
-gem "puma", ">= 5.0"
-# Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
-gem "importmap-rails"
-# Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
-gem "turbo-rails"
-# Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
-gem "stimulus-rails"
-# Build JSON APIs with ease [https://github.com/rails/jbuilder]
-gem "jbuilder"
+gem "rails", "~> 8.0.1"       # Full-stack web application framework.
+gem "pg"                      # Pg is the Ruby interface to the PostgreSQL RDBMS
 
-# Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
-# gem "bcrypt", "~> 3.1.7"
 
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem "tzinfo-data", platforms: %i[ windows jruby ]
+gem "propshaft"               # Deliver assets for Rails.
+gem "puma", ">= 5.0"          # A Ruby/Rack web server built for parallelism.
+gem "importmap-rails"         # Use ESM with importmap to manage modern JavaScript in Rails without transpiling or bundling.
+gem "turbo-rails"             # The speed of a single-page web application without having to write any JavaScript.
+gem "stimulus-rails"          # A modest JavaScript framework for the HTML you already have.
+gem "jbuilder"                # Create JSON structures via a Builder-style DSL
+gem "solid_cache"             # A database backed ActiveSupport::Cache::Store
+gem "solid_queue"             # Database-backed Active Job backend.
+gem "solid_cable"             # Database-backed Action Cable backend.
 
-# Use the database-backed adapters for Rails.cache, Active Job, and Action Cable
-gem "solid_cache"
-gem "solid_queue"
-gem "solid_cable"
+gem "bootsnap", require: false  # Boot large ruby/rails apps faster
+gem "kamal", require: false     # Deploy web apps in containers to servers running Docker with zero downtime.
+gem "thruster", require: false  # Zero-config HTTP/2 proxy
 
-# Reduces boot times through caching; required in config/boot.rb
-gem "bootsnap", require: false
-
-# Deploy this application anywhere as a Docker container [https://kamal-deploy.org]
-gem "kamal", require: false
-
-# Add HTTP asset caching/compression and X-Sendfile acceleration to Puma [https://github.com/basecamp/thruster/]
-gem "thruster", require: false
-
-# Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
-# gem "image_processing", "~> 1.2"
 
 group :development, :test do
-  # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
-  gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
-
-  # Static analysis for security vulnerabilities [https://brakemanscanner.org/]
-  gem "brakeman", require: false
-
-  # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
-  gem "rubocop-rails-omakase", require: false
+  gem 'debug_me'                  # A tool to print the labeled value of variables.
+  gem "brakeman", require: false  # Security vulnerability scanner for Ruby on Rails.
+  gem 'annotate'                  # Annotates Rails Models, routes, fixtures, and others based on the database schema.
+  gem "rubocop-rails-omakase", require: false  # Omakase Ruby styling for Rails
 end
 
 group :development do
-  # Use console on exceptions pages [https://github.com/rails/web-console]
-  gem "web-console"
+  gem "web-console"    # A debugging tool for your Ruby on Rails applications.
 end
 
 group :test do
-  # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
-  gem "capybara"
-  gem "selenium-webdriver"
+  gem 'rspec-rails'                           # RSpec for Rails
+  gem "capybara"                              # Capybara aims to simplify the process of integration testing Rack applications, such as Rails, Sinatra or Merb
+  gem "selenium-webdriver", require: false    # Selenium is a browser automation tool for automated testing of webapps and more
 end
-
-gem "pg", "~> 1.5"
