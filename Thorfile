@@ -1,1 +1,1 @@
-require_relative '../ragdoll/Thorfile'
+require 'ragdoll/Thorfile'

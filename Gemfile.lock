@@ -2,7 +2,7 @@ PATH
   remote: ../ragdoll
   specs:
     ragdoll (0.1.0)
-      rails (>= 8.0)
+      rails (~> 8.0)
 
 GEM
   remote: https://rubygems.org/
