@@ -16,6 +16,8 @@ gem "solid_cache"             # A database backed ActiveSupport::Cache::Store
 gem "solid_queue"             # Database-backed Active Job backend.
 gem "solid_cable"             # Database-backed Action Cable backend.
 
+gem "ragdoll", path: "../ragdoll"  # Local path to the ragdoll engine
+
 gem "bootsnap", require: false  # Boot large ruby/rails apps faster
 gem "kamal", require: false     # Deploy web apps in containers to servers running Docker with zero downtime.
 gem "thruster", require: false  # Zero-config HTTP/2 proxy

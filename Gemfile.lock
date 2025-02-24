@@ -1,3 +1,9 @@
+PATH
+  remote: ../ragdoll
+  specs:
+    ragdoll (0.1.0)
+      rails (>= 8.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -366,6 +372,7 @@ DEPENDENCIES
   pg
   propshaft
   puma (>= 5.0)
+  ragdoll!
   rails (~> 8.0.1)
   rspec-rails
   rubocop-rails-omakase
